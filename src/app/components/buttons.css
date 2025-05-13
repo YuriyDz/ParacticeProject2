@@ -1,0 +1,64 @@
+.button{
+width: 75px;
+height: 150px;
+
+z-index: 10;
+background-image: url("/arrow.webp");
+object-fit: contain; 
+background-repeat: no-repeat;
+background-position: center;
+  
+background-size: 150px 75px;
+background-color:rgba(0, 0, 0, 0);
+
+border: none;
+background-size:contain;
+transition: all .1s ease-in-out;
+}
+:hover.button{
+    filter: brightness(1.5);
+    scale: 1.2;
+    
+}
+:active.button{
+    filter: brightness(1.5);
+    scale: 0.6;
+}
+.cardBody{
+    width: 50%;
+    height: 100%;
+    align-content: center;
+    
+    vertical-align:middle;
+    justify-content: center;
+    align-items: center;
+    
+}
+.description{
+    font-size:50;
+    color: black;
+    font-style: italic;
+    font-family: Verdana;
+    font-weight: 800;
+}
+.type{
+    font-size: large;
+    color: black;
+    font-weight: 600;
+}
+.nameDesc{
+    background-color: black;
+    
+    padding: 3px;
+  
+    width: auto;
+    height: auto;
+    color: white;
+    font-size:medium;
+
+}
+.desc{
+    font-size: medium;
+    color: black;
+    font-weight: 400;
+}
