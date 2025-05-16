@@ -5,14 +5,24 @@ import React, { CSSProperties } from "react";
 import arr from "../../../public/tt.png";
 import "@/app/components/buttons.css";
 import { useSnapCarousel} from "react-snap-carousel";
-import {data,typesImages} from "@/app/data.js";
+import {data,typesImages,imagesLogo,imageBackground} from "@/app/data.js";
 
 const heightConst = 700;
 
-const card =(id: number, name: string, type: string, description: string)=>(
-<div style={{ minWidth: '100%',height: "100%", background: "white"}}>
 
-    <div className='cardBody' style={{backgroundColor: "cyan"}}>
+const background=(id: number)=>(
+    <div style={{width: "100%" , zIndex: "-1" , scale: "0.8" ,marginLeft: "-150px"}}>
+        <img src={imageBackground[id]}></img>
+    </div>
+);
+
+
+const card =(id: number, name: string, type: string, description: string)=>(
+<div style={{ minWidth: '100%',height: "100%"}}>
+    
+    <div className='cardBody'>
+    
+    <div style={{width: "auto", height: "10%"}}><img src={imagesLogo[id]} style={{marginLeft: '10px',scale: 0.85}}></img></div>
         <div style={{width: "60%", height: "auto", marginLeft: "20%"}}>
         <img src={typesImages[id]} style={{width: "5%", height: "5%"}}/><text className="type">{type}</text>
         <br/>
@@ -22,6 +32,7 @@ const card =(id: number, name: string, type: string, description: string)=>(
         <br/>
         <text>{description}</text>
         </div>
+        {background(id)}
     </div>
 </div>
 );

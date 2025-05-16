@@ -7,3 +7,7 @@ export const typesImages = ["https://www.marvelrivals.com/pc/gw/20241128194803/i
 "https://www.marvelrivals.com/pc/gw/20241128194803/img/zy_jdj_0a676db8.png",
 "https://www.marvelrivals.com/pc/gw/20241128194803/img/zy_xfz_c18d1719.png"
 ];
+export const imagesLogo = ["https://r.res.easebar.com/pic/20241120/79975fd7-91be-42ea-8edf-1c17d0522e09.png","https://r.res.easebar.com/pic/20241120/38064e9f-7efd-4faa-9e7d-124289425d46.png","https://r.res.easebar.com/pic/20241120/3e23b02a-f1e3-49c6-8f2c-10486fd4baa2.png"];
+export const imageBackground = ["https://r.res.easebar.com/pic/20241120/8dcfb160-f06d-4d61-b16c-ac37e415c22b.png",
+    
+];
