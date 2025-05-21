@@ -5,38 +5,59 @@ import React, { CSSProperties } from "react";
 import arr from "../../../public/tt.png";
 import "@/app/components/buttons.css";
 import { useSnapCarousel} from "react-snap-carousel";
-import {data,typesImages,imagesLogo,imageBackground} from "@/app/data.js";
+import {data,typesImages,imagesLogo,imageBackground,imageBackgroudBacker,heros  } from "@/app/data.js";
 
 const heightConst = 700;
 
 
-const background=(id: number)=>(
-    <div style={{width: "100%" , zIndex: "-1" , scale: "0.8" ,marginLeft: "-150px"}}>
-        <img src={imageBackground[id]}></img>
-    </div>
-);
+
 
 
 const card =(id: number, name: string, type: string, description: string)=>(
 <div style={{ minWidth: '100%',height: "100%"}}>
     
-    <div className='cardBody'>
-    
-    <div style={{width: "auto", height: "10%"}}><img src={imagesLogo[id]} style={{marginLeft: '10px',scale: 0.85}}></img></div>
-        <div style={{width: "60%", height: "auto", marginLeft: "20%"}}>
-        <img src={typesImages[id]} style={{width: "5%", height: "5%"}}/><text className="type">{type}</text>
-        <br/>
+    <div className='cardBody' style={{backgroundImage: `url(${imageBackground[id]}), url(${imageBackgroudBacker[id]})`}}>
+
+    <div className='leftPart'>
+   <div className='topPanel'>
+        
+      <img src={imagesLogo[id]} style={{scale: 0.7, position: "relative", left: "4rem", top: "7.5rem"}}></img>
+      <img src={typesImages[id]} style={{scale: 0.9}}/>
+      <text className="type">{type}</text>  
+        
+    </div>
+     
         <text className = "description">{name}</text>
         <br/>
-        <text className='nameDesc'>{name}</text><div style={{width: "100%", height: "2px", backgroundColor: "black"}}></div>
-        <br/>
-        <text>{description}</text>
-        </div>
-        {background(id)}
+  <text className='nameDesc'>{name}</text><div style={{width: "100%", height: "0.1rem", backgroundColor: "black"}}></div>
+    <br/>
+    <text>{description}</text>
+
     </div>
+    <div style={{position: "relative", height: "100%", width: "50%"}}>
+   <img className='images' src={heros[id]}/>
+</div>
+    </div>
+    
 </div>
 );
+/*
+ <div className='topPanel'>
+        
+      <img src={imagesLogo[id]} style={{scale: 0.7, position: "relative", left: "4rem", top: "7.5rem"}}></img>
+      <img src={typesImages[id]} style={{scale: 0.9}}/>
+      <text className="type">{type}</text>  
+        
+    </div>
+     
+        <text className = "description">{name}</text>
+        <br/>
+  <text className='nameDesc'>{name}</text><div style={{width: "100%", height: "0.1rem", backgroundColor: "black"}}></div>
+    <br/>
+    <text>{description}</text>
 
+    </div>
+*/
 
 
 export const Slider = () =>{
@@ -45,9 +66,10 @@ export const Slider = () =>{
     const { scrollRef, pages, activePageIndex, next, prev } = useSnapCarousel();
 
 return (<div>
-<div style = {{width: "100%", height: "0px", display: "flex", zIndex: "10"}}>
-    <button onClick={()=>prev()} className='button' style={{rotate: "270deg", marginTop: heightConst/2-150+"px"}}></button>
-    <button onClick={()=>next()} className='button' style={{rotate: "90deg" ,marginTop: heightConst/2-150+"px", marginLeft: "90%"}}></button>
+<div className='buttonsDiv'>
+    <button onClick={()=>prev()} className='button' style={{rotate: "270deg"}}></button>
+    
+    <button onClick={()=>next()} className='button' style={{rotate: "90deg", right: "0%"}}></button>
 </div>
 <div ref = {scrollRef} style={{width: "100%", height: heightConst+"px",display: 'flex',
           overflowX: 'auto',scrollSnapType: 'x mandatory',}}>

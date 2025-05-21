@@ -1,0 +1,53 @@
+.headerMy{
+  position:fixed;
+  z-index: 100;
+width: 100%;
+height: 60px;
+display: flex;
+background-color: black;
+}
+.ButtonDownload{
+    width: 30rem;
+    height: auto;
+    border: none;
+    background-image: url("https://www.marvelrivals.com/pc/gw/20241128194803/img/go-steam_d8bfd4cf.png");
+    font-weight: 900;
+    
+    background-color: black;
+    font-size: x-large;
+    left: 0px;
+}
+:hover.ButtonDownload{
+    filter: brightness(1.2);
+}
+.buttonLogin{
+    width: auto;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: gainsboro;
+    font-size: large;
+    margin: 10px;
+    
+}
+:hover.buttonLogin{
+    color: gray;
+}
+.lang{
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0);
+}
+.ffot{
+  
+    width: 100%;
+    display: flex;
+    background-color: black;
+    text-align: center;
+    padding: 50px;
+    
+}
+.fotterText{
+    color: white;
+    font-size: x-small;
+}
