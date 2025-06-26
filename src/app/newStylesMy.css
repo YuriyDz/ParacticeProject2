@@ -6,8 +6,14 @@ height: 60px;
 display: flex;
 background-color: black;
 }
+.forTextDownload{
+    width: 13rem;
+    height: auto;
+    
+    margin-left: auto;
+}
 .ButtonDownload{
-    width: 30rem;
+    min-width: 15rem;
     height: auto;
     border: none;
     background-image: url("https://www.marvelrivals.com/pc/gw/20241128194803/img/go-steam_d8bfd4cf.png");
@@ -16,6 +22,7 @@ background-color: black;
     background-color: black;
     font-size: x-large;
     left: 0px;
+    
 }
 :hover.ButtonDownload{
     filter: brightness(1.2);
@@ -27,13 +34,16 @@ background-color: black;
     color: gainsboro;
     font-size: large;
     margin: 10px;
-    
+    font-weight: 700;
+    font-size:larger;
 }
 :hover.buttonLogin{
     color: gray;
 }
 .lang{
-    margin: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
     width: 40px;
     height: 40px;
     background-color: rgba(0, 0, 0, 0);
@@ -50,4 +60,42 @@ background-color: black;
 .fotterText{
     color: white;
     font-size: x-small;
+}
+
+
+.logoImage {
+  height: 50px;
+  padding: 5px;
+  margin: 5px;
+  margin-left: 25px;
+}
+
+.headerSpacer {
+  width: 100%;
+}
+
+.langIcon {
+  scale: 0.6;
+  
+}
+footerZIndex {
+  z-index: 11;
+}
+
+.footerHalf {
+  width: 50%;
+}
+
+.footerIcon {
+  scale: 1;
+  width: auto;
+  height: 50px;
+  margin: 10px;
+}
+
+.footerTextBlock {
+  height: 50px;
+  width: auto;
+  text-align: left;
+  margin: 10px;
 }

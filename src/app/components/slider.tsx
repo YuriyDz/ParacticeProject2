@@ -5,49 +5,57 @@ import React, { CSSProperties } from "react";
 import arr from "../../../public/tt.png";
 import "@/app/components/buttons.css";
 import { useSnapCarousel} from "react-snap-carousel";
-import {data,typesImages,imagesLogo,imageBackground,imageBackgroudBacker,heros  } from "@/app/data.js";
+import {data,typesImages } from "@/app/data.js";
 
 const heightConst = 700;
 
+const card = (
+  id: string,
+  idActive: boolean,
+  name: string,
+  type: string,
+  description: string
+) => (
+  <div className="cardWrapper">
+    <div
+      className="cardBody"
+      style={{
+        backgroundImage: `url(${typesImages[id]["imageBackground"]}), url(${typesImages[id]["imageBackgroudBacker"]})`,
+      }}
+    >
+      <div className="leftPart">
+        <div className="underLeftPanel">
+          <div className="leftPanelTop">
+            <div className="logoRow">
+              {idActive ? (
+                <img src={typesImages[id]["imagesLogo"]} className="imgLogo" />
+              ) : null}
+              <img src={typesImages[id]["icon"]} className="imgType" />
+              <text className="type">{type}</text>
+            </div>
+            <text className="description">{name}</text>
+          </div>
 
+          <text className="nameDesc">{name}</text>
+          <div className="dividerLine" />
+          <br />
+          <text>{description}</text>
+        </div>
+      </div>
 
-
-
-const card =(id: number, idActive: number, name: string, type: string, description: string)=>(
-<div style={{ minWidth: '100%',height: "100%"}}>
-    
-    <div className='cardBody' style={{backgroundImage: `url(${imageBackground[id]}), url(${imageBackgroudBacker[id]})`}}>
-
-    <div className='leftPart'>
-<div className='underLeftPanel'>
- <div style={{width: "100%", height: "auto"}}>
-   
-  <div style={{width: "auto", height: "2.5rem", flexDirection: "row"}}>
-    <text className="type">{type}</text>
-{ idActive == 0?    
-<img src={imagesLogo[id]}  className='imgLogo'></img>
-: null}
-  <img src={typesImages[id]} style={{position: "absolute", width: "auto", scale: 0.8}}></img>
- 
-    
+      <div className="imagePart">
+        <img
+          className="images"
+          style={{
+            top: typesImages[id]["offset"]["top"],
+            right: typesImages[id]["offset"]["right"],
+            scale: typesImages[id]["offset"]["scale"],
+          }}
+          src={typesImages[id]["heros"]}
+        />
+      </div>
+    </div>
   </div>
-
-
-      
-        <text className = "description">{name}</text>
-    </div>
-   
-        
-  <text className='nameDesc'>{name}</text><div style={{width: "100%", height: "0.1rem", backgroundColor: "black"}}></div>
-    <br/>
-    <text>{description}</text>
-
-
-
-  </div>
-    </div>
-    </div>
-</div>
 );
 /*
     
@@ -93,7 +101,7 @@ return (<div>
 <div className='scroll' ref = {scrollRef} style={{width: "100%", height: heightConst+"px",display: 'flex',
           overflow: 'hiden',scrollSnapType: 'x mandatory'}}>
 {
-data.map((i,index)=>card(i.typeIm,activePageIndex-index,i.name,i.type, i.desc))
+data.map((i,index)=>card(i.typeIm,activePageIndex == index,i.name,i.type, i.desc))
 }
 </div>
 
